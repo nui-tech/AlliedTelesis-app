@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
     public apiService: ApiService,
     private _router: Router
   ) {
-    this.titleService.setTitle("Home - AT Currency");
+    this.titleService.setTitle("Home - AT Exchange Rates");
   }
 
   ngOnInit() {

@@ -13,16 +13,13 @@ import { Http, Response, Headers, RequestOptions, RequestOptionsArgs } from '@an
 
 @Injectable()
 export class ApiService {
-    currencyInfo: CurrencyInfo;
 
     private _fixerIoUrl = 'https://api.fixer.io/latest?base=USD';
     private _newsUrl = 'https://newsapi.org/v1/articles?source=the-next-web&sortBy=latest'
 
     constructor(
         private _http: Http,
-    ) {
-        this.currencyInfo = new CurrencyInfo();
-    }
+    ) {}
 
     getCurrencyInfos(): Observable<ICurrencyInfo> {
         let _headers = new Headers({ 'Accept': 'application/json' });
