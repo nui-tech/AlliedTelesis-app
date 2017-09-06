@@ -1,0 +1,23 @@
+<header class="content">
+  <h3>Economic News</h3>
+  <h6>Retriving data from <a href="https://newsapi.org" target="_blank">newsapi.org</a></h6>
+</header>
+
+<article *ngFor="let news of dataSources.articles">
+  <aside class="pull-left">
+    <img [src]="news.urlToImage" alt="poster">
+  </aside>
+  <section>
+    <header>
+      <h5>{{news.title}}</h5>
+      <em>By <strong>{{news.author}}</strong> on {{news.publishedAt | date}} </em>
+    </header>
+    <main>
+      {{news.description}}
+    </main>
+    <footer>
+      <a md-raised-button color="primary" [href]="news.url" target="_blank">Read more</a>
+    </footer>
+  </section>
+
+</article>

@@ -1,0 +1,33 @@
+<header class="content">
+  <h3>Exchange Rates</h3>
+  <h6>Retriving currency exchange rates from <a href="http://fixer.io" target="_blank">fixer.io</a> using free plan.</h6>
+</header>
+
+<main class="content">
+
+
+  <table class="table table-inverse">
+    <thead>
+      <tr>
+        <th>Pairs</th>
+        <th>Buy</th>
+        <th>Sell</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pair of dataSource.rates | ObjNgFor ">
+        <th scope="row">{{dataSource.base}}/{{pair}}</th>
+        <td style="color:greenyellow;">{{dataSource.rates[pair] + 0.15 | number: '1.1-5'}}</td>
+        <td style="color:red;">{{dataSource.rates[pair]}}</td>
+        <td>
+          <button md-raised-button (click)="addToWatchList(pair,dataSource.rates[pair])">Watch</button>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+
+
+
+</main>

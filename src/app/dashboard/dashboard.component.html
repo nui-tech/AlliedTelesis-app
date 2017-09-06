@@ -1,0 +1,24 @@
+<header class="content">
+  <h3>Dashboard</h3>
+  <h6>My watching currency pair.</h6>
+</header>
+
+<main class="content">
+
+<div class="jumbotron jumbotron-fluid" *ngIf="pair != null">
+  <div class="container">
+    <h1 class="display-3">USD/{{pair}}</h1>
+    <h2 class="lead">Price: {{rate}}</h2>
+    <button md-raised-button color="warn" (click)="clearWatchingPair()">Stop watching</button>
+  </div>
+</div>
+
+<div class="jumbotron jumbotron-fluid" *ngIf="pair == null">
+  <div class="container">
+    <h1 class="display-3">You have no watching pair</h1>
+    <h2 class="lead">Go home to pick currency pair.</h2>
+    <button md-raised-button color="primary" routerLink="/home">Go home</button>
+  </div>
+</div>
+
+</main>

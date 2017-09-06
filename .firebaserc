@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "allied-telesis-fn-app",
+    "production": "allied-telesis-fn-app"
+  }
+}
